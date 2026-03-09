@@ -4,5 +4,5 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "3000:80"
+      - "5173:80"
     restart: unless-stopped
