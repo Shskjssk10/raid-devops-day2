@@ -6,7 +6,7 @@ export default defineConfig({
     globals: true,
     coverage: {
       provider: 'v8',
-      reporter: ['text'],
+      reporter: ['text', 'json-summary'],
       exclude: [
         'node_modules/',
         'src/__tests__/',

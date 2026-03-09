@@ -20,6 +20,10 @@ jobs:
           cache-dependency-path: backend/package-lock.json
       - run: npm install
       - run: npm run test:coverage
+      - uses: davelosert/vitest-coverage-report-action@v2
+        if: always()
+        with:
+          working-directory: backend
 
   gitleaks:
     name: Gitleaks
