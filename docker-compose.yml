@@ -7,6 +7,16 @@ services:
       - "5173:5173"
     restart: unless-stopped
 
+  # backend:
+  #   build:
+  #     context: ./backend
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3001:3001"
+  #   environment:
+  #     - OTEL_EXPORTER_OTLP_ENDPOINT=http://jaeger:4318/v1/traces
+  #   restart: unless-stopped
+
   # jaeger:
   #   image: jaegertracing/all-in-one:latest
   #   ports:
