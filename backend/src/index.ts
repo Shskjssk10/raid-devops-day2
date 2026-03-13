@@ -17,7 +17,7 @@ const mockDatabase = [
 
 // Transform user data: split name into first and last name
 export const transformUserData = (user: typeof mockDatabase[0]) => {
-  const [firstName, lastName] = user.name.split('-');
+  const [firstName, lastName] = user.name.split(' ');
   return {
     id: user.id,
     first_name: firstName,
