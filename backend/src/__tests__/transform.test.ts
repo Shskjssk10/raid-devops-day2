@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { transformUserData, extractCompanyDomain } from '../index';
+import { transformUserData, extractCompanyDomain, getUsersFromDatabase } from '../index';
 
 describe('transformUserData', () => {
   it('should transform user object by splitting full name into first and last name', () => {
@@ -68,5 +68,16 @@ describe('extractCompanyDomain', () => {
     const email = 'alice@example.com';
     const result = extractCompanyDomain(email);
     expect(result).toBe('example.com');
+  });
+});
+
+describe('getUsersFromDatabase', () => {
+  it('should return an array of user objects', () => {
+    const users = getUsersFromDatabase();
+    expect(Array.isArray(users)).toBe(true);
+    expect(users.length).toBeGreaterThan(0);
+    expect(users[0]).toHaveProperty('id');
+    expect(users[0]).toHaveProperty('name');
+    expect(users[0]).toHaveProperty('email');
   });
 });
