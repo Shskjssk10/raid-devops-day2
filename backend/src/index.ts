@@ -32,7 +32,7 @@ export const extractCompanyDomain = (email: string) => {
 };
 
 // Simulate database retrieval
-const getUsersFromDatabase = () => {
+export const getUsersFromDatabase = () => {
   return mockDatabase;
 };
 
